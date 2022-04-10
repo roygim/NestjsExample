@@ -3,17 +3,17 @@ const { usersDB } = require('../../db');
 import { Injectable } from '@nestjs/common';
 import { UserDto } from './dto';
 
-const users: UserDto [] = usersDB;
+//const users: UserDto [] = usersDB;
 
 @Injectable()
 export class UserService {
   async getAllUsers() {
     const retVal = usersDB.filter(item => delete item.password);
-    return usersDB;
+    return retVal;
   }
 
   async addUser(dto: UserDto) {
-    users.push(dto);
+    usersDB.push(dto);
     delete dto.password;
     return dto;
   }
