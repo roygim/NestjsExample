@@ -11,9 +11,9 @@ getAllUsers() {
     return this.userService.getAllUsers();
 }
 
-@Post('addUser')
-addUser(@Body() dto: UserDto) {
-    return this.userService.addUser(dto);
+@Post('createUser')
+createUser(@Body() dto: UserDto) {
+    return this.userService.createUser(dto);
 }
 }
   
