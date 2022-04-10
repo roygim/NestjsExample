@@ -4,16 +4,16 @@ import { UserDto } from './dto';
 
 @Controller('users')
 export class UserController {
-constructor(private userService: UserService) {}
+    constructor(private userService: UserService) {}
 
-@Get()
-getAllUsers() {
-    return this.userService.getAllUsers();
-}
+    @Get()
+    getAllUsers() {
+        return this.userService.getAllUsers();
+    }
 
-@Post('createUser')
-createUser(@Body() dto: UserDto) {
-    return this.userService.createUser(dto);
-}
+    @Post('createUser')
+    createUser(@Body() dto: UserDto) {
+        return this.userService.createUser(dto);
+    }
 }
   
