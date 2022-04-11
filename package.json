@@ -25,6 +25,7 @@
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "axios": "^0.26.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "lodash.find": "^4.6.0",
