@@ -1,6 +1,6 @@
 const { usersDB } = require('../../db');
 import { Injectable } from '@nestjs/common';
-import { UserDto } from './dto';
+import { CreateUserDto } from './dto';
 import { v4 as uuidv4 } from 'uuid';
 const find = require('lodash.find');
 import { HttpException } from '@nestjs/common/exceptions/http.exception';
@@ -13,7 +13,7 @@ export class UserService {
     return retVal;
   }
 
-  async createUser(dto: UserDto) {
+  async createUser(dto: CreateUserDto) {
     if(find(usersDB, ['email', dto.email])) {
       const errors = { message: 'email must be unique.' };
       throw new HttpException({message: 'Input data validation failed', errors}, HttpStatus.BAD_REQUEST);

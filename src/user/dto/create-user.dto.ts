@@ -4,9 +4,8 @@ import {
   IsString,
   IsOptional
 } from 'class-validator';
-import { Exclude } from 'class-transformer';
 
-export class UserDto {
+export class CreateUserDto {
   id: string;
   
   @IsEmail()
@@ -17,12 +16,12 @@ export class UserDto {
   @IsNotEmpty()
   password: string;
 
-  // @IsString()
-  // @IsOptional()
-  // firstName?: string;
+  @IsString()
+  @IsOptional()
+  firstName?: string;
 
-  // @IsString()
-  // @IsOptional()
-  // lastName?: string;
+  @IsString()
+  @IsOptional()
+  lastName?: string;
 }
   

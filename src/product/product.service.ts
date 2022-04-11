@@ -26,4 +26,11 @@ export class ProductService {
       }
     }
   }
+
+  async addProduct(productId: number, userId: string) {
+    
+
+
+    return 'id ' + productId + ' , userId: ' + userId;
+  }
 }
