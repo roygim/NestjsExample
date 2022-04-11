@@ -16,7 +16,7 @@ export class ProductController {
     }
 
     @Post()
-    addProduct(@Body('productId', ParseIntPipe) productId: number, @Body('userId') userId: string) {
-        return this.productService.addProduct(productId, userId);
+    addProductToCart(@Body('productId', ParseIntPipe) productId: number, @Body('userId') userId: string) {
+        return this.productService.addProductToCart(productId, userId);
     }
 }
