@@ -1,5 +1,5 @@
 const { usersDB } = require('../../db');
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto';
 import { v4 as uuidv4 } from 'uuid';
 const find = require('lodash.find');
@@ -9,12 +9,10 @@ import { CommonService } from 'src/common/common.service';
 
 @Injectable()
 export class UserService {
-  constructor(private commonService: CommonService) {}
-
+  constructor(private commonService: CommonService) {} 
+  
   async getAllUsers() {
-    const retVal = usersDB.filter(item => delete item.password);
-    this.commonService.writeLog('users', retVal);
-    return retVal;
+    return this.commonService.getAllUsers();
   }
 
   async createUser(dto: CreateUserDto) {
