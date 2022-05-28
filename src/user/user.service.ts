@@ -6,13 +6,15 @@ const find = require('lodash.find');
 import { HttpException } from '@nestjs/common/exceptions/http.exception';
 import { HttpStatus } from '@nestjs/common';
 import { CommonService } from 'src/common/common.service';
+import { IUsers } from 'src/core/interfaces/IUsers';
+import { IUsersToken } from 'src/core/interfaces/tokens';
 
 @Injectable()
 export class UserService {
-  constructor(private commonService: CommonService) {} 
+  constructor(private commonService: CommonService, @Inject(IUsersToken) private usersApiService: IUsers) {} 
   
   async getAllUsers() {
-    return this.commonService.getAllUsers();
+    return this.usersApiService.getUsers();
   }
 
   async createUser(dto: CreateUserDto) {

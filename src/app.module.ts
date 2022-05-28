@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { ProductModule } from './product/product.module';
 import { CommonModule } from './common/common.module';
+import { RepositoriesModule } from './repositories/repositories.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { CommonModule } from './common/common.module';
     }),
     CommonModule,
     UserModule,
-    ProductModule    
+    ProductModule,
+    RepositoriesModule    
   ],
   controllers: [AppController],
   providers: [],
